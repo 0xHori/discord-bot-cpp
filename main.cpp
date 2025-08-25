@@ -54,6 +54,7 @@ int main() {
     });
 
     bot.on_ready([&bot](const dpp::ready_t& event) {
+        bot.set_presence(dpp::presence(dpp::ps_online, dpp::at_listening, "0xHori"));
         if (dpp::run_once<struct register_bot_commands>()) {
             bot.global_command_create(dpp::slashcommand("ping", "Ping pong!", bot.me.id));
             bot.global_command_create(dpp::slashcommand("embed", "Send a test embed!", bot.me.id));
