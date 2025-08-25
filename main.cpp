@@ -15,7 +15,6 @@ int main() {
             event.reply("Pong!");
         }
         if (event.command.get_command_name() == "embed") {
-                /* Create an embed */
                 dpp::embed embed = dpp::embed()
                     .set_color(dpp::colors::sti_blue)
                     .set_title("Some name")
@@ -45,10 +44,8 @@ int main() {
                     )
                     .set_timestamp(time(0));
 
-                /* Create a message with the content as our new embed. */
                 dpp::message msg(event.command.channel_id, embed);
 
-                /* Reply to the user with the message, containing our embed. */
                 event.reply(msg);
             }
     });
